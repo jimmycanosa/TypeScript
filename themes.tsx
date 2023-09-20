@@ -10,7 +10,7 @@ export default function Themes() {
     <section className='min-h-screen flex flex-col items-center justify-center'>
       <h1 className='text-4xl mb-5 font-semibold'>Themes</h1>
 
-      <ThemeOptions themeOptions={themeOptions} />
+      <ThemeOptions themeOptions={themeOptions} selectedTheme={selectedTheme} />
 
       <p className='mt-10'>
         Selected theme: <strong>{selectedTheme}</strong>
@@ -19,7 +19,13 @@ export default function Themes() {
   );
 }
 
-function ThemeOptions({ themeOptions }: { themeOptions: string[] }) {
+function ThemeOptions({
+  themeOptions,
+  selectedTheme,
+}: {
+  themeOptions: string[];
+  selectedTheme: string;
+}) {
   return (
     <ul className='list-disc'>
       {themeOptions.map((theme, index) => (
