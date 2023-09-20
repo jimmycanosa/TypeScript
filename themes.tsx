@@ -29,7 +29,7 @@ type ThemeOptionsProps<T> = {
   onThemeClick: (theme: T) => void;
 };
 
-function ThemeOptions<T>({
+function ThemeOptions<T extends React.ReactNode>({
   themeOptions,
   selectedTheme,
   onThemeClick,
