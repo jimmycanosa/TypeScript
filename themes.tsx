@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 
-const themeOptions = ['light', 'dark', 'system'];
-
 export default function Themes() {
   const [selectedTheme, setSelectedTheme] = useState('ligth');
+  const themeOptions = ['light', 'dark', 'system'];
 
   return (
     <section className='min-h-screen flex flex-col items-center justify-center'>
