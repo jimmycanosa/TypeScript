@@ -19,10 +19,10 @@ export default function Themes() {
   );
 }
 
-function ThemeOptions(props: { themeOptions: string[] }) {
+function ThemeOptions({ themeOptions }: { themeOptions: string[] }) {
   return (
     <ul className='list-disc'>
-      {props.themeOptions.map((theme, index) => (
+      {themeOptions.map((theme, index) => (
         <li key={index}>
           <button
             onClick={() => setSelectedTheme(theme)}
