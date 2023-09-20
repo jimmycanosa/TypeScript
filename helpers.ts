@@ -14,20 +14,31 @@ function convertToArray3(input: number): number[] {
   return [input];
 }
 
-convertToArray3('hello'); // error if input is string
+// convertToArray3('hello'); // error if input is string
+convertToArray3(5); // error if input is string
 
-function convertToArray4(input: number | string): string[] {
-  return [input];
-}
+// function convertToArray4(input: number | string): string[] {
+//   return [input];
+// }
 
-convertToArray4('hello');
+// convertToArray4('hello');
 
+// traditional function syntax
 function convertToArray5<T>(input: T): T[] {
   return [input];
 }
 
 convertToArray5(5);
 
+function convertToArray6<T extends number | string>(input: T): T[] {
+  return [input];
+}
+
+convertToArray6(5); // restrict type to string and number only
+convertToArray6('hello'); // restrict type to string and number only
+// convertToArray6(true); // restrict type to string and number only
+
+// arrow function syntax
 const convertToArray = <T>(input: T): T[] => {
   return [input];
 };
