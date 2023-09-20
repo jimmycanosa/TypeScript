@@ -19,12 +19,12 @@ export default function Themes() {
   );
 }
 
-function ThemeOptions({
+function ThemeOptions<T>({
   themeOptions,
   selectedTheme,
 }: {
-  themeOptions: string[];
-  selectedTheme: string;
+  themeOptions: T[];
+  selectedTheme: T;
 }) {
   return (
     <ul className='list-disc'>
