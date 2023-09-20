@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 
+type Theme = 'light' | 'dark' | 'system';
+
 export default function Themes() {
-  const [selectedTheme, setSelectedTheme] = useState('ligth');
+  const [selectedTheme, setSelectedTheme] = useState<Theme>('ligth');
   const themeOptions = ['light', 'dark', 'system'];
 
   return (
