@@ -10,7 +10,11 @@ export default function Themes() {
     <section className='min-h-screen flex flex-col items-center justify-center'>
       <h1 className='text-4xl mb-5 font-semibold'>Themes</h1>
 
-      <ThemeOptions themeOptions={themeOptions} selectedTheme={selectedTheme} />
+      <ThemeOptions
+        themeOptions={themeOptions}
+        selectedTheme={selectedTheme}
+        onThemeClick={(theme) => setSelectedTheme(theme)}
+      />
 
       <p className='mt-10'>
         Selected theme: <strong>{selectedTheme}</strong>
@@ -19,19 +23,23 @@ export default function Themes() {
   );
 }
 
+type ThemeOptionsProps<T> = {
+  themeOptions: T[];
+  selectedTheme: T;
+  onThemeClick: (theme: T) => void;
+};
+
 function ThemeOptions<T>({
   themeOptions,
   selectedTheme,
-}: {
-  themeOptions: T[];
-  selectedTheme: T;
-}) {
+  onThemeClick,
+}: ThemeOptionsProps<T>) {
   return (
     <ul className='list-disc'>
       {themeOptions.map((theme, index) => (
         <li key={index}>
           <button
-            onClick={() => setSelectedTheme(theme)}
+            onClick={() => onThemeClick(theme)}
             className={theme === selectedTheme ? 'font-bold' : ''}
           >
             {theme}
